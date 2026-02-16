@@ -1,16 +1,16 @@
+/* Factorial */
 
-/*
- * Factorial
- */
+#include <stdio.h>
 
- #include <stdio.h>
+int main( void ) {
+   long unsigned int f[20];
 
- int main( void ) {
-    int f[20];
+   long unsigned int cumulativeProduct = 1u;
+   for (unsigned int index=0u; index<20; index++) {
+      f[index] = cumulativeProduct;
+      printf("%d --> %ld\n", index, cumulativeProduct);
+      cumulativeProduct *= (index+1);
+   }
 
-    /*
-    Code to compute the factorial of each array index
-    Print your final answer
-    */
-    return 0;
- }
+   return 0;
+}
