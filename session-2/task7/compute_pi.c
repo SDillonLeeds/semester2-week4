@@ -17,9 +17,20 @@
 int main( int argc, char **argv ) {
     double Pi = 3.1415926535897932;
 
-    /*
-    Your code
-    */
+    if (argc < 2) {return -1; /* Not enough args */}
+    int n = atoi(argv[1]);
+    float piApprox = 4.0f;
+    float cumulative = 1.0f;
+    for (int i=1; i<=n; i++) {
+        cumulative -= 1 / (2*(float)(i) + 1);
+    }
+    piApprox -= cumulative;
+    
+    printf("n:          %i\n", n);
+    printf("Cumulative: %f\n", cumulative);
+    printf("Calculated: %f\n", piApprox);
+    printf("Expected:   %f\n", Pi);
+
 
     return 0;
 }
